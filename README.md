@@ -26,7 +26,7 @@ Requires static [taglib](https://taglib.org) libraries to compile - see [go-tagl
 
 ### Build
 
-`go build`
+`./bin/build`
 
 # License
 

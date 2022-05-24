@@ -12,12 +12,17 @@ import (
 	"strings"
 )
 
+var GitCommit string // to track builds, provided at buildtime
+
 func main() {
 	args := os.Args[1:] // trim command from list
 
 	for _, arg := range args {
-		if arg == "--help" || arg == "-h" {
+		if arg == "--help" || arg == "-h" || arg == "help" {
 			printHelp()
+		}
+		if arg == "--version" || arg == "-v" || arg == "version" {
+			printVersion()
 		}
 	}
 
@@ -118,5 +123,10 @@ func printHelp() {
 	fmt.Println("        -h, --help: Show helpful information")
 	fmt.Println("")
 
+	os.Exit(0)
+}
+
+func printVersion() {
+	fmt.Printf("mptags build %s\n", GitCommit)
 	os.Exit(0)
 }
