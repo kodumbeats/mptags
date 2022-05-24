@@ -111,17 +111,26 @@ func main() {
 }
 
 func printHelp() {
-	fmt.Println("mptags is a tool to bulk assign tags to music files based on their filename/dir")
-	fmt.Println("")
-	fmt.Println("Usage:")
-	fmt.Println("        mptags [path] [--flags]")
-	fmt.Println("")
-	fmt.Println("Arguments:")
-	fmt.Println("        path: (optional) album path, defaults to $PWD")
-	fmt.Println("")
-	fmt.Println("Flags:")
-	fmt.Println("        -h, --help: Show helpful information")
-	fmt.Println("")
+	fmt.Println(`
+mptags is a tool to bulk assign tags to music files based on their filename/dir
+
+Usage:
+  mptags [argument] [--flags]
+
+Arguments:
+  path: (optional) album path, defaults to $PWD
+    $ mptags /path/to/album
+
+  help: show command information
+    $ mptags help
+
+  version: show build version
+    $ mptags version
+
+Flags:
+  -h, --help: show command information
+  -v, --version: show build version
+  `)
 
 	os.Exit(0)
 }

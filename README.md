@@ -8,13 +8,21 @@ For some reason, all the fancy tools to edit song tags were too cumbersome and h
 mptags is a tool to bulk assign tags to music files based on their filename/dir
 
 Usage:
-				mptags [path] [--flags]
+  mptags [argument] [--flags]
 
 Arguments:
-				path: (optional) album path, defaults to $PWD
+  path: (optional) album path, defaults to $PWD
+    $ mptags /path/to/album
+
+  help: show command information
+    $ mptags help
+
+  version: show build version
+    $ mptags version
 
 Flags:
-				-h, --help: Show helpful information
+  -h, --help: show command information
+  -v, --version: show build version
 ```
 
 ## Development
