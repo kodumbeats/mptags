@@ -61,11 +61,12 @@ func main() {
 		artist = strings.TrimSpace(artist) // trim whitespaces
 
 		title, _, _ := strings.Cut(audioFile, ".") // trim extension
+		title = strings.TrimSpace(title)
 
-		if !confirmed {
+		if confirmed == false {
 			fmt.Println("Dry run:")
 			fmt.Println("")
-			fmt.Println("Album: " + album)
+			fmt.Println("Album: " + album + " (" + strconv.Itoa(len(songs)) + " songs)")
 			fmt.Println("Track: " + strconv.Itoa(track))
 			fmt.Println("Title: " + title)
 			fmt.Println("Artist: " + artist)
@@ -77,8 +78,7 @@ func main() {
 			if inputErr != nil {
 				log.Fatal(inputErr)
 			}
-
-			if strings.ToLower(confirm) != "y" {
+			if strings.ToLower(strings.TrimSpace(confirm)) != "y" {
 				os.Exit(0)
 			}
 
